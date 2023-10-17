@@ -22,7 +22,7 @@ clientes: Cliente[] | undefined ;
 
   ngOnInit(){
 
-    this.clientes = this.clienteservice.getClientes();
+  this.clienteservice.getClientes().subscribe( clientes => this.clientes = clientes);
 
   }
 
