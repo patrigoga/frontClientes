@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Cliente } from './cliente';
-import { CLIENTES } from './clientes.json';
+import { ClienteService } from './cliente.service';
+
 
 
 
@@ -16,12 +17,12 @@ clientes: Cliente[] | undefined ;
 
 
 
-  constructor(){}
+  constructor(private clienteservice: ClienteService){}
 
 
   ngOnInit(){
 
-    this.clientes = CLIENTES;
+    this.clientes = this.clienteservice.getClientes();
 
   }
 
